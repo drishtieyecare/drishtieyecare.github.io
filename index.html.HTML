@@ -1,0 +1,2048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
+    <title>Drishti Eye Care | Gentle Eye Care Clinic</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        :root {
+            --bg-body: #F4F6F6;
+            --text-primary: #1F2933;
+            --card-bg: rgba(255, 255, 255, 0.75);
+            --accent: #2C7A7B;
+            --accent-hover: #236364;
+            --accent-light: rgba(44, 122, 123, 0.10);
+            --gold: #68B0AB;
+            --gold-light: #D4EFED;
+            --whatsapp-green: #25D366;
+            --soft-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+            --hover-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+            --border-light: #D0D9D9;
+            --section-bg-alt: linear-gradient(180deg, rgba(44, 122, 123, 0.04) 0%, rgba(104, 176, 171, 0.02) 100%);
+            --footer-border: #D0D9D9;
+        }
+.reviews-ticker {
+    background: var(--card-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 14px;
+    padding: 20px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    box-shadow: var(--soft-shadow);
+    transition: box-shadow 0.3s ease;
+    border: 1px solid var(--border-light);
+}
+.reviews-ticker:hover {
+    box-shadow: var(--hover-shadow);
+}
+.ticker-track {
+    display: inline-block;
+    animation: scrollReviews 45s linear infinite;
+}
+.review-item {
+    display: inline-block;
+    background: rgba(44, 122, 123, 0.06);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 12px;
+    padding: 10px 22px;
+    margin-right: 20px;
+    font-size: 0.9rem;
+    white-space: normal;
+    max-width: 300px;
+    vertical-align: middle;
+    transition: transform 0.25s ease, background 0.25s ease;
+    color: var(--text-primary);
+    border: 1px solid var(--border-light);
+}
+.review-item:hover {
+    transform: translateY(-3px);
+    background: rgba(44, 122, 123, 0.12);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+@keyframes scrollReviews {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+.reviews-ticker:hover .ticker-track {
+    animation-play-state: paused;
+}
+
+        body.dark {
+            --bg-body: #1A1F1F;
+            --text-primary: #E2E8E7;
+            --card-bg: rgba(30, 36, 36, 0.82);
+            --accent: #68B0AB;
+            --accent-hover: #7EC9C3;
+            --accent-light: rgba(104, 176, 171, 0.15);
+            --gold: #68B0AB;
+            --gold-light: #2C4A48;
+            --whatsapp-green: #25D366;
+            --soft-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+            --hover-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+            --border-light: #344040;
+            --section-bg-alt: linear-gradient(180deg, rgba(44, 122, 123, 0.08) 0%, rgba(104, 176, 171, 0.02) 100%);
+            --footer-border: #344040;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-primary);
+            scroll-behavior: smooth;
+            line-height: 1.6;
+            overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.2s ease;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            position: relative;
+            background-image: radial-gradient(ellipse 600px 500px at 15% 25%, rgba(44, 122, 123, 0.05) 0%, transparent 100%), radial-gradient(ellipse 500px 600px at 85% 75%, rgba(104, 176, 171, 0.05) 0%, transparent 100%), url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2368B0AB' fill-opacity='0.08'%3E%3Ccircle cx='20' cy='20' r='1.5'/%3E%3C/g%3E%3C/svg%3E");
+            background-attachment: fixed, fixed, scroll;
+            background-repeat: no-repeat, no-repeat, repeat;
+            background-position: 0 0, 0 0, 0 0;
+            background-size: 100% 100%, 100% 100%, auto;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 200px 200px;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 28px;
+            position: relative;
+            z-index: 1;
+        }
+
+        section {
+            padding: 72px 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .section-sub {
+            text-align: center;
+            color: var(--text-primary);
+            opacity: 0.75;
+            max-width: 620px;
+            margin: 0 auto 48px auto;
+            font-size: 1.05rem;
+            font-weight: 400;
+        }
+.google-review-link { text-align: center; margin-top: 24px; }
+.google-review-link a { color: var(--accent); font-weight: 600; text-decoration: underline; }
+.google-review-link a:hover { color: var(--accent-hover); }
+
+        /* Scroll Progress Bar */
+        #scrollProgress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), var(--gold), var(--accent));
+            background-size: 200% 100%;
+            animation: shimmerBar 2s linear infinite;
+            z-index: 10000;
+            width: 0;
+            border-radius: 0 3px 0 0;
+        }
+
+        @keyframes shimmerBar {
+            0% {
+                background-position: 200% 0;
+            }
+            100% {
+                background-position: -200% 0;
+            }
+        }
+
+        /* Gradient text */
+        .gradient-text {
+            background: linear-gradient(135deg, var(--accent), var(--gold), var(--accent-hover), var(--gold));
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientText 4s ease infinite;
+            display: inline;
+        }
+
+        @keyframes gradientText {
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            border: none;
+            padding: 12px 26px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: #ffffff;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            letter-spacing: 0.01em;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn-primary::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.5s ease, height 0.5s ease;
+            z-index: -1;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(44, 122, 123, 0.30);
+        }
+
+        @keyframes gentlePulse {
+            0%,
+            100% {
+                box-shadow: 0 6px 20px rgba(44, 122, 123, 0.25);
+            }
+            50% {
+                box-shadow: 0 10px 30px rgba(44, 122, 123, 0.45);
+            }
+        }
+
+        .btn-primary,
+        .sticky-book {
+            animation: gentlePulse 3s ease-in-out infinite;
+        }
+
+        .sticky-book:hover,
+        .btn-primary:hover {
+            animation: none;
+        }
+
+        /* Dark mode toggle */
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 24px;
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            padding: 9px 16px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            z-index: 1002;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            box-shadow: var(--soft-shadow);
+            transition: 0.2s ease;
+            color: var(--text-primary);
+        }
+
+        .theme-toggle:hover {
+            transform: translateY(-2px) rotate(5deg);
+            box-shadow: var(--hover-shadow);
+        }
+
+        /* Hero section */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .hero-content {
+            flex: 1.2;
+        }
+
+        .hero-content h1 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+            margin-bottom: 18px;
+            color: var(--text-primary);
+        }
+
+        .hero-content h1 .light-first {
+            font-weight: 300;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            opacity: 0.8;
+            margin-bottom: 28px;
+            line-height: 1.7;
+            max-width: 480px;
+        }
+
+        .hero-image {
+            flex: 1;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            max-width: 420px;
+            aspect-ratio: 3 / 4;
+            position: relative;
+            transition: box-shadow 0.3s ease, transform 0.2s ease;
+            border: 1px solid var(--border-light);
+            will-change: transform;
+        }
+
+        .hero-image:hover {
+            box-shadow: 0 20px 48px rgba(0, 0, 0, 0.16);
+            transform: translateY(-4px);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            max-height: 520px;
+            object-fit: cover;
+            object-position: center 15%;
+            display: block;
+            transition: transform 0.5s ease, filter 0.5s ease;
+        }
+
+        .hero-image:hover img {
+            transform: scale(1.04);
+            filter: brightness(1.06) contrast(1.02);
+        }
+
+        .hero-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 60%, rgba(0, 0, 0, 0.03) 100%);
+            pointer-events: none;
+            z-index: 2;
+            transition: opacity 0.4s ease;
+        }
+
+        .hero-image:hover::after {
+            opacity: 0;
+        }
+
+        /* Doctor card */
+        .doctor-card {
+            display: flex;
+            flex-wrap: wrap;
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--soft-shadow);
+            transition: box-shadow 0.3s ease, transform 0.2s ease;
+            border: 1px solid var(--border-light);
+            will-change: transform;
+        }
+
+        .doctor-card:hover {
+            box-shadow: var(--hover-shadow);
+            transform: translateY(-2px);
+        }
+
+        .doctor-img {
+            flex: 1;
+            min-width: 280px;
+            aspect-ratio: 3 / 4;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .doctor-img img {
+            width: 100%;
+            height: 100%;
+            max-height: 460px;
+            object-fit: cover;
+            object-position: center 12%;
+            display: block;
+            transition: transform 0.5s ease, filter 0.5s ease;
+            will-change: transform;
+        }
+
+        .doctor-card:hover .doctor-img img {
+            transform: scale(1.04);
+            filter: brightness(1.05);
+        }
+
+        .doctor-img::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 50%, rgba(0, 0, 0, 0.04) 100%);
+            pointer-events: none;
+            z-index: 2;
+            transition: opacity 0.4s ease;
+        }
+
+        .doctor-card:hover .doctor-img::after {
+            opacity: 0;
+        }
+
+        .doctor-info {
+            flex: 1.2;
+            padding: 36px 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .doctor-info h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        .doctor-info .badge {
+            background: var(--accent-light);
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 12px;
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.85rem;
+            width: fit-content;
+            margin-bottom: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .doctor-card:hover .badge {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        .doctor-info p {
+            margin-top: 14px;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--text-primary);
+            opacity: 0.85;
+        }
+
+        /* Service cards */
+        .services-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 14px;
+            padding: 28px 22px 24px;
+            flex: 1;
+            min-width: 200px;
+            max-width: 260px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: var(--soft-shadow);
+            border: 1px solid var(--border-light);
+            position: relative;
+            overflow: hidden;
+            will-change: transform;
+            transform-style: preserve-3d;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+            transition: left 0.6s ease;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .service-card:hover::before {
+            left: 100%;
+        }
+
+        .service-card:hover {
+            box-shadow: 0 20px 44px rgba(0, 0, 0, 0.14), 0 0 0 2px rgba(44, 122, 123, 0.25);
+            border-color: var(--accent);
+        }
+
+        .service-icon {
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 14px;
+            display: inline-block;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.15) rotate(-5deg);
+            color: var(--accent);
+        }
+
+        .service-card h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: var(--text-primary);
+            transition: color 0.25s ease;
+        }
+
+        .service-card:hover h3 {
+            color: var(--accent);
+        }
+
+        .service-card p {
+            font-size: 0.88rem;
+            color: var(--text-primary);
+            opacity: 0.7;
+        }
+
+        /* Eye test card */
+        .eye-test-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 14px;
+            padding: 36px 30px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.10);
+            text-align: center;
+            transition: box-shadow 0.3s ease, transform 0.2s ease;
+            border: 1px solid #ffffff;
+            will-change: transform;
+        }
+
+        .eye-test-card:hover {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+            transform: translateY(-2px);
+        }
+
+        .eye-chart {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            margin: 24px auto;
+            padding: 22px 18px;
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            border-radius: 12px;
+            max-width: 460px;
+            transition: filter 0.3s ease, background 0.3s ease;
+            letter-spacing: 0.04em;
+            line-height: 1.5;
+            border: 1px solid var(--border-light);
+        }
+
+        body.dark .eye-chart {
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .blur-effect {
+            filter: blur(5px);
+        }
+
+        .blur-toggle {
+            background: var(--gold);
+            border: none;
+            padding: 10px 22px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #fff;
+            transition: all 0.25s ease;
+            font-size: 0.9rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blur-toggle::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(-100%);
+            transition: transform 0.4s ease;
+        }
+
+        .blur-toggle:hover::after {
+            transform: translateX(0);
+        }
+
+        .blur-toggle:hover {
+            background: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
+        }
+
+        /* Problems grid */
+        .problems-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .problem-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 14px;
+            padding: 24px 20px;
+            flex: 1;
+            min-width: 200px;
+            max-width: 300px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: var(--soft-shadow);
+            border: 1px solid var(--border-light);
+            will-change: transform;
+            position: relative;
+            overflow: hidden;
+            transform-style: preserve-3d;
+        }
+
+        .problem-card:hover {
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.13), 0 0 0 2px rgba(44, 122, 123, 0.2);
+            border-color: var(--accent);
+        }
+
+        .problem-card i {
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 12px;
+            display: inline-block;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .problem-card:hover i {
+            transform: scale(1.15) rotate(-8deg);
+            color: var(--accent);
+        }
+
+        .problem-card p {
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        /* Steps section */
+        .steps-container-exp {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .step-exp {
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 14px;
+            padding: 28px 20px 24px;
+            flex: 1;
+            min-width: 200px;
+            max-width: 260px;
+            text-align: center;
+            box-shadow: var(--soft-shadow);
+            border: 1px solid var(--border-light);
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, border-color 0.3s ease, opacity 0.5s ease;
+            will-change: transform;
+        }
+
+        .step-exp:hover {
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12), 0 0 0 2px rgba(44, 122, 123, 0.2);
+            border-color: var(--accent);
+        }
+
+        .step-exp i {
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 12px;
+            display: inline-block;
+            transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.3s ease;
+        }
+
+        .step-exp:hover i {
+            transform: scale(1.2) rotate(8deg);
+            color: var(--accent);
+        }
+
+        .step-exp h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: var(--text-primary);
+            transition: color 0.25s ease;
+        }
+
+        .step-exp:hover h3 {
+            color: var(--accent);
+        }
+
+        .step-exp p {
+            font-size: 0.88rem;
+            color: var(--text-primary);
+            opacity: 0.7;
+        }
+
+        .step-exp.appear {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .step-exp:nth-child(1) {
+            transition-delay: 0.08s;
+        }
+
+        .step-exp:nth-child(2) {
+            transition-delay: 0.16s;
+        }
+
+        .step-exp:nth-child(3) {
+            transition-delay: 0.24s;
+        }
+
+        .step-exp:nth-child(4) {
+            transition-delay: 0.32s;
+        }
+
+        .step-exp:hover {
+            transition-delay: 0s !important;
+        }
+
+        /* Reveal animations */
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal-up.visible,
+        .reveal-left.visible,
+        .reveal-right.visible,
+        .reveal-scale.visible {
+            opacity: 1;
+            transform: translate(0) scale(1);
+        }
+
+        /* Floating animation for icons */
+        @keyframes floatIcon {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        .float-icon {
+            animation: floatIcon 3s ease-in-out infinite;
+        }
+
+        .service-card:nth-child(odd) .service-icon {
+            animation-delay: 0s;
+        }
+
+        .service-card:nth-child(even) .service-icon {
+            animation-delay: 0.6s;
+        }
+
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 18px;
+            margin-top: 12px;
+        }
+
+        .gallery-item {
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: var(--soft-shadow);
+    transition: all 0.35s ease;
+    /* auto height – no fixed aspect-ratio */
+    position: relative;
+    border: 1px solid var(--border-light);
+    will-change: transform;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-body);
+}
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;   /* whole image, no cropping */
+    display: block;
+    transition: transform 0.5s ease, filter 0.5s ease;
+    will-change: transform;
+}
+        }
+
+        .gallery-item::after {
+            content: '🔍';
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.3);
+            color: #fff;
+            font-size: 2rem;
+            opacity: 0;
+            transition: opacity 0.35s ease;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+            filter: brightness(0.85);
+        }
+
+        .gallery-item:hover::after {
+            opacity: 1;
+        }
+
+        /* Myth vs Fact */
+        .myth-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 8px;
+        }
+
+        .myth-instruction {
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            opacity: 0.65;
+            margin-top: 8px;
+            font-style: italic;
+        }
+
+        .slide-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 14px;
+            width: 100%;
+            max-width: 280px;
+            height: 210px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--soft-shadow);
+            border: 1px solid var(--border-light);
+            transition: box-shadow 0.3s ease, transform 0.2s ease;
+            will-change: transform;
+        }
+
+        .slide-card:hover {
+            box-shadow: 0 16px 38px rgba(0, 0, 0, 0.13);
+            transform: translateY(-3px);
+        }
+
+        .slide-front,
+        .slide-back {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 24px 18px;
+            transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .slide-front {
+            z-index: 2;
+            background: inherit;
+            border-radius: 14px;
+        }
+
+        .slide-back {
+            background: var(--accent);
+            color: #ffffff;
+            border-radius: 0 0 14px 14px;
+            transform: translateY(100%);
+            z-index: 1;
+        }
+
+        .slide-card:hover .slide-front {
+            transform: translateY(-30%);
+            opacity: 0.8;
+        }
+
+        .slide-card:hover .slide-back {
+            transform: translateY(0);
+        }
+
+        .slide-front i {
+            font-size: 1.8rem;
+            color: #1A4A4A;
+            margin-bottom: 8px;
+            transition: transform 0.35s ease;
+        }
+
+        .slide-card:hover .slide-front i {
+            transform: scale(1.15) rotate(-8deg);
+        }
+
+        .slide-front h3 {
+            color: #1A4A4A;
+            font-weight: 700;
+        }
+
+        .slide-back i {
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 8px;
+            animation: popIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        @keyframes popIn {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .slide-back h3 {
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .slide-front p,
+        .slide-back p {
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        body.dark .slide-back {
+            background: #2C7A7B;
+        }
+
+        /* Before/After */
+        .comparison {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+            justify-content: center;
+        }
+
+        .before-box,
+        .after-box {
+            flex: 1;
+            min-width: 260px;
+            max-width: 420px;
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 14px;
+            padding: 32px 28px;
+            transition: all 0.3s ease;
+            box-shadow: var(--soft-shadow);
+            border: 1px solid var(--border-light);
+            position: relative;
+            overflow: hidden;
+            will-change: transform;
+        }
+
+        .before-box:hover,
+        .after-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .before-box:hover {
+            border-color: #A0B0A8;
+        }
+        .after-box:hover {
+            border-color: var(--accent);
+        }
+
+        .before-box i,
+        .after-box i {
+            transition: transform 0.3s ease;
+        }
+        .before-box:hover i,
+        .after-box:hover i {
+            transform: scale(1.1);
+        }
+
+        .before-box ul,
+        .after-box ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 10px;
+        }
+        .before-box li,
+        .after-box li {
+            padding: 6px 0;
+            font-size: 0.95rem;
+            transition: transform 0.3s ease;
+        }
+        .before-box:hover li,
+        .after-box:hover li {
+            transform: translateX(4px);
+        }
+
+        .after-box h3 {
+            color: var(--accent);
+            font-weight: 700;
+        }
+        .before-box h3 {
+            color: #6F7E79;
+            font-weight: 700;
+        }
+
+        /* Stats */
+        .stats-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 44px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            color: var(--gold);
+            letter-spacing: -0.01em;
+            transition: transform 0.3s ease;
+        }
+        .stat-item:hover h3 {
+            transform: scale(1.08);
+        }
+        .stat-item p {
+            color: #ffffff;
+            font-weight: 500;
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        /* WhatsApp booking */
+        .whatsapp-booking-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 14px;
+            padding: 36px 30px;
+            box-shadow: var(--soft-shadow);
+            transition: box-shadow 0.3s ease, transform 0.2s ease;
+            border: 1px solid var(--border-light);
+            max-width: 620px;
+            margin: 0 auto;
+        }
+        .whatsapp-booking-card:hover {
+            box-shadow: var(--hover-shadow);
+            transform: translateY(-2px);
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 5px;
+            font-size: 0.88rem;
+            color: var(--text-primary);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 12px;
+            border: 2px solid transparent;
+            border-bottom: 2px solid var(--border-light);
+            background: var(--card-bg);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            transition: all 0.25s ease;
+            outline: none;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--text-primary);
+            opacity: 0.5;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: transparent;
+            border-bottom: 2px solid var(--accent);
+            box-shadow: 0 4px 16px rgba(44, 122, 123, 0.10);
+            background: var(--card-bg);
+        }
+
+        .btn-whatsapp-full {
+            background: var(--whatsapp-green);
+            width: 100%;
+            padding: 15px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 6px;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-whatsapp-full::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+        }
+        .btn-whatsapp-full:hover::after {
+            width: 400px;
+            height: 400px;
+        }
+        .btn-whatsapp-full:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.04);
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.30);
+        }
+
+                <!-- Reviews Ticker -->
+        <section>
+            <div class="container">
+                <h2 class="section-title reveal-up">❤️ What Our Patients Say</h2>
+                <div class="reviews-ticker reveal-up">
+                    <div class="ticker-track" id="tickerTrack">
+                        <span class="review-item">⭐ 4.8 – "Very friendly doctor, explained everything clearly!" – Priya</span>
+                        <span class="review-item">⭐ 4.9 – "Modern clinic, relaxing atmosphere, best eye care!" – Michael</span>
+                        <span class="review-item">⭐ 5.0 – "Dr. Emily is so gentle. Highly recommend!" – Elena</span>
+                        <span class="review-item">⭐ 4.7 – "Lifetime clarity, thank you Drishti Eye care!" – Rajesh</span>
+                        <span class="review-item">⭐ 5.0 – "Painless and thorough exam. Great team!" – Sarah</span>
+                        <span class="review-item">⭐ 4.6 – "Ambience is so soothing, felt like a spa." – Ananya</span>
+                        <span class="review-item">⭐ 4.9 – "Staff was incredibly polite and caring." – Vikram</span>
+                        <span class="review-item">⭐ 4.8 – "Got my new glasses in just 2 days! Super fast." – Neha</span>
+                        <span class="review-item">⭐ 4.5 – "Hygiene level is top-notch, very clean." – Ramesh</span>
+                        <span class="review-item">⭐ 4.9 – "Doctor answered all my questions patiently." – Kavita</span>
+                        <span class="review-item">⭐ 4.4 – "Good experience overall. Will visit again." – Suresh</span>
+                        <span class="review-item">⭐ 4.8 – "The eye test was so quick and accurate." – Deepika</span>
+                        <span class="review-item">⭐ 4.3 – "Felt comfortable throughout the checkup." – Manoj</span>
+                        <span class="review-item">⭐ 4.9 – "Loved the modern equipment they use." – Pooja</span>
+                        <span class="review-item">⭐ 4.7 – "Receptionist was very welcoming." – Akash</span>
+                        <span class="review-item">⭐ 4.6 – "Doctor explained my prescription in detail." – Sunita</span>
+                        <span class="review-item">⭐ 4.8 – "Excellent service, definitely recommended." – Arjun</span>
+                        <span class="review-item">⭐ 4.5 – "The clinic has a very positive vibe." – Meera</span>
+                        <span class="review-item">⭐ 4.2 – "Wait time was a bit long but worth it." – Rohit</span>
+                        <span class="review-item">⭐ 4.9 – "Best eye care I have ever received." – Anjali</span>
+                        <span class="review-item">⭐ 4.8 – "Everything was explained before the test." – Karan</span>
+                        <span class="review-item">⭐ 4.7 – "Very clean and well-maintained clinic." – Sneha</span>
+                        <span class="review-item">⭐ 4.6 – "The staff made my child feel at ease." – Divya</span>
+                        <span class="review-item">⭐ 4.4 – "Affordable pricing, quality treatment." – Amit</span>
+                        <span class="review-item">⭐ 4.9 – "Dr. Emily is a true professional." – Rakhi</span>
+                        <span class="review-item">⭐ 4.3 – "Nice ambience, liked the soft music." – Vijay</span>
+                        <span class="review-item">⭐ 4.8 – "They sanitized everything in front of me." – Preeti</span>
+                        <span class="review-item">⭐ 5.0 – "Flawless consultation. Highly impressed." – Gaurav</span>
+                        <span class="review-item">⭐ 4.7 – "The doctor gave me lifestyle tips too." – Shweta</span>
+                        <span class="review-item">⭐ 4.5 – "Everything from booking to checkup was smooth." – Rajat</span>
+                        <span class="review-item">⭐ 4.6 – "My eye strain is finally gone. Thank you!" – Priyanka</span>
+                        <span class="review-item">⭐ 4.8 – "Clinic interiors are beautiful and modern." – Abhishek</span>
+                        <span class="review-item">⭐ 4.4 – "Good selection of frames." – Ritu</span>
+                        <span class="review-item">⭐ 4.9 – "Doctor took time to listen, no rush." – Alok</span>
+                        <span class="review-item">⭐ 5.0 – "I could read clearly after the test. Magic!" – Nisha</span>
+                        <span class="review-item">⭐ 4.8 – "Friendly atmosphere, felt like home." – Mohit</span>
+                        <span class="review-item">⭐ 4.3 – "Sometimes slightly crowded but staff handles well." – Jyoti</span>
+                        <span class="review-item">⭐ 4.7 – "The air conditioning was perfect, very comfortable." – Shubham</span>
+                        <span class="review-item">⭐ 4.6 – "High-tech machines, impressive." – Kiran</span>
+                        <span class="review-item">⭐ 4.9 – "Easy to book appointment on WhatsApp." – Lalita</span>
+                        <span class="review-item">⭐ 4.2 – "Decent experience, could improve speed." – Rahul</span>
+                        <span class="review-item">⭐ 4.5 – "Loved how they handled my elderly father." – Pankaj</span>
+                        <span class="review-item">⭐ 4.8 – "Superb clarity after getting new glasses." – Sapna</span>
+                        <span class="review-item">⭐ 4.7 – "The eye exercise tips really helped." – Vivek</span>
+                        <span class="review-item">⭐ 4.4 – "Nice follow-up call after a week." – Rekha</span>
+                        <span class="review-item">⭐ 4.9 – "The clinic uses eco-friendly materials, nice touch." – Siddharth</span>
+                        <span class="review-item">⭐ 5.0 – "Best optometrist I've ever met." – Anuradha</span>
+                        <span class="review-item">⭐ 4.6 – "Cleanliness at its peak, very impressed." – Dinesh</span>
+                        <span class="review-item">⭐ 4.8 – "My headaches reduced after the visit." – Pallavi</span>
+                        <span class="review-item">⭐ 4.3 – "Parking can be an issue but clinic is great." – Mukesh</span>
+                        <span class="review-item">⭐ 4.7 – "Kids' play area is a thoughtful addition." – Shilpa</span>
+                        <span class="review-item">⭐ 4.5 – "Efficient service. Got my lenses in a day." – Harsh</span>
+                        <span class="review-item">⭐ 4.9 – "The doctor's calm demeanor is very reassuring." – Mitali</span>
+                        <span class="review-item">⭐ 4.8 – "From ambience to treatment, all excellent." – Tarun</span>
+                        <span class="review-item">⭐ 4.4 – "I was nervous but they made me comfortable." – Roshni</span>
+                        <span class="review-item">⭐ 4.6 – "Professional and punctual. What else needed?" – Sanjay</span>
+                        <span class="review-item">⭐ 4.9 – "They have the latest eye-testing gadgets." – Geeta</span>
+                        <span class="review-item">⭐ 5.0 – "I can see clearly now, thanks to Dr. Emily!" – Jatin</span>
+                        <span class="review-item">⭐ 4.7 – "The staff remembered my name on second visit." – Bhavna</span>
+                        <span class="review-item">⭐ 4.5 – "Soft lighting in the waiting area is relaxing." – Chirag</span>
+                        <span class="review-item">⭐ 4.8 – "Absolutely no pain during any test." – Karishma</span>
+                        <span class="review-item">⭐ 4.3 – "Good, but please add more seating." – Hemant</span>
+                        <span class="review-item">⭐ 4.6 – "My dry eye problem is much better now." – Ayesha</span>
+                        <span class="review-item">⭐ 4.9 – "Highly recommend for kids." – Madhavi</span>
+                        <span class="review-item">⭐ 4.2 – "Affordable prices with great quality." – Yash</span>
+                        <span class="review-item">⭐ 4.8 – "The entire team is very supportive." – Nalini</span>
+                        <span class="review-item">⭐ 4.5 – "Clinic location is convenient." – Aditya</span>
+                        <span class="review-item">⭐ 4.7 – "Nice frame collection, got compliments." – Vaishali</span>
+                        <span class="review-item">⭐ 4.4 – "Everything was sterilized, felt very safe." – Lalit</span>
+                        <span class="review-item">⭐ 4.9 – "The doctor gave me a diet chart for eye health." – Jyotsna</span>
+                        <span class="review-item">⭐ 4.6 – "Positive energy the moment you walk in." – Rohan</span>
+                        <span class="review-item">⭐ 4.8 – "My experience was outstanding." – Deepak</span>
+                        <span class="review-item">⭐ 4.3 – "Waiting time could be less, but service excellent." – Pooja</span>
+                        <span class="review-item">⭐ 4.5 – "They explained my insurance coverage honestly." – Alka</span>
+                        <span class="review-item">⭐ 4.7 – "I've been coming here for 3 years. Always great." – Manju</span>
+                        <span class="review-item">⭐ 4.9 – "Advanced retina scanning, very detailed." – Rishi</span>
+                        <span class="review-item">⭐ 5.0 – "No need to go anywhere else. This is the best." – Sarika</span>
+                        <span class="review-item">⭐ 4.8 – "The staff is kind and the treatment is effective." – Bhuvan</span>
+                        <span class="review-item">⭐ 4.4 – "Loved the personalized attention." – Nidhi</span>
+                        <span class="review-item">⭐ 4.6 – "My son's first eye exam was painless. Thank you!" – Monica</span>
+                        <span class="review-item">⭐ 4.7 – "Hygiene and safety protocols exceeded expectations." – Dheeraj</span>
+                        <span class="review-item">⭐ 4.5 – "Very happy with the contact lens fitting." – Shruti</span>
+                        <span class="review-item">⭐ 4.9 – "They even have a cooling water dispenser. Nice." – Harish</span>
+                        <span class="review-item">⭐ 4.8 – "Best decision to switch to Drishti eye care Vision." – Tanya</span>
+                        <span class="review-item">⭐ 4.2 – "Could use more staff during peak hours." – Mahesh</span>
+                        <span class="review-item">⭐ 4.6 – "Dr. Emily explained my cataract risk so calmly." – Sudha</span>
+                        <span class="review-item">⭐ 4.3 – "Pleasant experience, will bring my family." – Nikhil</span>
+                        <span class="review-item">⭐ 4.7 – "Everything is digital, even prescriptions." – Esha</span>
+                        <span class="review-item">⭐ 5.0 – "Professional, clean, and very welcoming." – Gaurav</span>
+                        <span class="review-item">⭐ 4.8 – "The music playlist is so relaxing." – Isha</span>
+                        <span class="review-item">⭐ 4.5 – "Reasonable rates for such high-quality care." – Shekhar</span>
+                        <span class="review-item">⭐ 4.9 – "They gave me a free cleaning kit. Sweet gesture." – Parul</span>
+                        <span class="review-item">⭐ 4.4 – "Ambience is like a high-end clinic." – Aakash</span>
+                        <span class="review-item">⭐ 4.6 – "Treatment for my eye allergy was very effective." – Mansi</span>
+                        <span class="review-item">⭐ 4.7 – "Even the washroom is spotless." – Pranav</span>
+                        <span class="review-item">⭐ 4.8 – "Quick bloodless tests, very modern." – Khushi</span>
+                        <span class="review-item">⭐ 4.3 – "Good, but a little expensive." – Saurabh</span>
+                        <span class="review-item">⭐ 4.5 – "The doctor speaks very softly and kindly." – Mala</span>
+                        <span class="review-item">⭐ 4.9 – "Best ambience in the city." – Yashika</span>
+                        <span class="review-item">⭐ 4.6 – "Got appointment same day. Happy." – Vipul</span>
+                        <span class="review-item">⭐ 4.8 – "Staff guided me about blue-light glasses." – Ritika</span>
+                        <span class="review-item">⭐ 4.4 – "Decent, might come again." – Chandra</span>
+                        <span class="review-item">⭐ 4.7 – "A very reassuring environment for seniors." – Uma</span>
+                        <span class="review-item">⭐ 4.2 – "Average wait, but good doctor." – Jaya</span>
+                        <span class="review-item">⭐ 4.5 – "Liked the honesty about not needing costly glasses." – Anupam</span>
+                        <span class="review-item">⭐ 4.9 – "Exceptional care, truly world-class." – Shantanu</span>
+                        <span class="review-item">⭐ 5.0 – "Seeing clearly and feeling great!" – Sunaina</span>
+                    </div>
+                </div>
+                <div class="google-review-link reveal-up">
+                    <a href="https://www.google.com/maps/search/Indore+Near+Market+road,+India" target="_blank" rel="noopener">⭐ Check Live Reviews on Google</a>
+                </div>
+            </div>
+        </section>
+
+        /* Map */
+        .map-container {
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: var(--soft-shadow);
+            margin-top: 16px;
+            transition: box-shadow 0.3s ease, transform 0.2s ease;
+            border: 1px solid var(--border-light);
+        }
+        .map-container:hover {
+            box-shadow: var(--hover-shadow);
+            transform: translateY(-2px);
+        }
+        .map-link {
+            text-align: center;
+            margin-top: 14px;
+        }
+        .map-link a {
+            color: var(--accent);
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.2s ease;
+            font-size: 0.95rem;
+        }
+        .map-link a:hover {
+            color: var(--accent-hover);
+            text-decoration: underline;
+        }
+
+        /* Floating buttons */
+        .floating-wa {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: var(--whatsapp-green);
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 26px;
+            z-index: 1000;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+            transition: all 0.25s ease;
+            text-decoration: none;
+            animation: floatPulse 2s ease-in-out infinite;
+        }
+        @keyframes floatPulse {
+            0%,
+            100% {
+                transform: scale(1);
+                box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+            }
+            50% {
+                transform: scale(1.06);
+                box-shadow: 0 10px 28px rgba(37, 211, 102, 0.55);
+            }
+        }
+        .floating-wa:hover {
+            animation: none;
+            transform: scale(1.1);
+            box-shadow: 0 12px 32px rgba(37, 211, 102, 0.55);
+        }
+
+        .sticky-book {
+            position: fixed;
+            bottom: 94px;
+            right: 24px;
+            background: var(--gold);
+            padding: 11px 18px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.88rem;
+            color: #1F2933;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            z-index: 1000;
+            box-shadow: 0 6px 20px rgba(104, 176, 171, 0.45);
+            transition: all 0.25s ease;
+        }
+        .sticky-book:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(104, 176, 171, 0.65);
+            background: #5AA39E;
+            color: #fff;
+            animation: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 28px;
+            border-top: 1px solid var(--footer-border);
+            color: var(--text-primary);
+            opacity: 0.65;
+            font-size: 0.88rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+            .hero {
+                gap: 24px;
+            }
+            .sticky-book {
+                bottom: 76px;
+                padding: 10px 15px;
+                font-size: 0.8rem;
+            }
+            .hero-image {
+                max-width: 100%;
+                aspect-ratio: 4/5;
+            }
+            .hero-image img {
+                max-height: 380px;
+            }
+            .doctor-img {
+                aspect-ratio: 4/5;
+            }
+            .doctor-img img {
+                max-height: 340px;
+            }
+            .doctor-info {
+                padding: 26px 22px;
+            }
+            .service-card {
+                min-width: 150px;
+            }
+            .slide-card {
+                height: 190px;
+                min-width: 210px;
+            }
+            .before-box,
+            .after-box {
+                min-width: 240px;
+                padding: 26px 20px;
+            }
+            .section-title {
+                font-size: 1.7rem;
+            }
+            .hero-content h1 {
+                font-size: 2.4rem;
+            }
+            #backToTop {
+                bottom: 20px;
+                left: 16px;
+                width: 38px;
+                height: 38px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 16px;
+            }
+        }
+
+        .parallax-image {
+            will-change: transform;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="scrollProgress"></div>
+
+    <div id="backToTop" title="Back to top"><i class="fas fa-arrow-up"></i></div>
+
+    <button class="theme-toggle" id="themeToggleBtn"><i class="fas fa-moon"></i> <span id="themeText">Dark Mode</span></button>
+
+    <div class="container">
+        <section style="padding-top: 30px;">
+            <div class="hero">
+                <div class="hero-content reveal-left">
+                    <h1><span class="light-first">Caring for Your Eyes,</span> <br><span class="gradient-text">Gently</span></h1>
+                    <p>Modern, mindful eye care in a warm and calming environment. Your vision, our heartfelt priority.</p>
+                    <div style="display:flex; gap:14px; flex-wrap:wrap;">
+    <a href="#whatsapp-booking" class="btn-primary"><i class="fas fa-calendar-check"></i> Book Appointment</a>
+    <a href="https://wa.me/7678213022?text=Hi%20Drishti%20Eye%20Care" target="_blank" style="background:#25D366; color:#fff; padding:12px 26px; border-radius:12px; font-weight:600; font-size:0.95rem; display:inline-flex; align-items:center; gap:8px; text-decoration:none; transition:0.25s ease; box-shadow:0 4px 16px rgba(37,211,102,0.3);">
+        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+    </a>
+</div>
+                </div>
+                <div class="hero-image reveal-right parallax-image" data-parallax-strength="0.03">
+                    <img src="https://images.pexels.com/photos/5215024/pexels-photo-5215024.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Smiling eye doctor portrait" loading="eager">
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <div class="eye-test-card reveal-scale">
+                    <h2 class="section-title">👁️ Test Your Vision in 10 Seconds</h2>
+                    <p>Cover one eye and try reading this</p>
+                    <div id="eyeChartDisplay" class="eye-chart">
+                        <div style="font-size:42px;">E</div>
+                        <div style="font-size:34px;">F P</div>
+                        <div style="font-size:28px;">T O Z</div>
+                        <div style="font-size:22px;">L P E D</div>
+                        <div style="font-size:16px;">P E C F D</div>
+                    </div>
+                    <button class="blur-toggle" id="blurToggleBtn">🔍 Simulate Blur (Toggle)</button>
+                    <div style="margin-top:28px;"><button id="startEyeTestBtn" class="btn-primary" style="background:var(--gold);">✨ Start Quick Eye Test</button></div>
+                </div>
+            </div>
+        </section>
+
+        <section style="background: var(--section-bg-alt);">
+            <div class="container">
+                <h2 class="section-title reveal-up">🤔 Do You Feel This?</h2>
+                <div class="problems-grid">
+                    <div class="problem-card tilt-card reveal-up"><i class="fas fa-mobile-alt float-icon"></i><p>Eye strain after using phone?</p></div>
+                    <div class="problem-card tilt-card reveal-up"><i class="fas fa-car float-icon"></i><p>Blur vision while driving at night?</p></div>
+                    <div class="problem-card tilt-card reveal-up"><i class="fas fa-brain float-icon"></i><p>Headache after long screen time?</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <h2 class="section-title reveal-up"><span class="gradient-text">✨ We've Got You Covered</span></h2>
+                <div class="services-grid">
+                    <div class="service-card tilt-card reveal-scale"><div class="service-icon float-icon"><i class="fas fa-glasses"></i></div><h3>Eye Checkup</h3><p>Complete vision analysis</p></div>
+                    <div class="service-card tilt-card reveal-scale"><div class="service-icon float-icon"><i class="fas fa-tint"></i></div><h3>Dry Eye Treatment</h3><p>Therapy & lasting relief</p></div>
+                    <div class="service-card tilt-card reveal-scale"><div class="service-icon float-icon"><i class="fas fa-chart-line"></i></div><h3>Vision Testing</h3><p>Precision for all ages</p></div>
+                    <div class="service-card tilt-card reveal-scale"><div class="service-icon float-icon"><i class="fas fa-eye"></i></div><h3>Glaucoma Screening</h3><p>Early detection</p></div>
+                    <div class="service-card tilt-card reveal-scale"><div class="service-icon float-icon"><i class="fas fa-child"></i></div><h3>Pediatric Eye Care</h3><p>Gentle, playful exams</p></div>
+                    <div class="service-card tilt-card reveal-scale"><div class="service-icon float-icon"><i class="fas fa-clinic-medical"></i></div><h3>Contact Lenses</h3><p>Custom fitting</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section style="background: var(--section-bg-alt);">
+            <div class="container">
+                <h2 class="section-title reveal-up">🏥 What Happens When You Visit Us?</h2>
+                <div class="steps-container-exp">
+                    <div class="step-exp reveal-up"><i class="fas fa-smile-wink"></i><h3>1. Friendly welcome</h3><p>Warm greetings & zero waiting</p></div>
+                    <div class="step-exp reveal-up"><i class="fas fa-chart-line"></i><h3>2. Eye testing</h3><p>Advanced painless screening</p></div>
+                    <div class="step-exp reveal-up"><i class="fas fa-user-md"></i><h3>3. Doctor consultation</h3><p>Personalized & unhurried</p></div>
+                    <div class="step-exp reveal-up"><i class="fas fa-clipboard-list"></i><h3>4. Clear guidance</h3><p>Next steps & eye care tips</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <div class="doctor-card reveal-scale">
+                    <div class="doctor-img parallax-image" data-parallax-strength="0.02">
+                        <img src="https://images.pexels.com/photos/5215024/pexels-photo-5215024.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Dr. Emily Chen portrait">
+                    </div>
+                    <div class="doctor-info">
+                        <h3>Dr. Emily Chen</h3>
+                        <div class="badge">Clinical Director</div>
+                        <p>👩‍⚕️ "Don't let blurry vision become a lifelong regret. In just a few minutes, we can catch problems before they steal your eyesight."</p>
+                        <p>✨ "Here, you are not just a patient — you are family. I listen carefully, explain clearly, and never rush your consultation."</p>
+                        <p>🛡️ "My only goal: you walk out with a simple plan, comfortable eyes, and full confidence that your vision is in safe hands."</p>
+                        <p>❤️ 12+ years of honest, gentle care in your neighbourhood – with the trust of 5000+ happy families.</p>
+                        <p>📍 "We understand lifestyles, screen strain, and dust‑related allergies. Solutions that actually work for you."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section style="background: var(--section-bg-alt);">
+            <div class="container">
+                <h2 class="section-title reveal-up">📸 Our Clinic Gallery</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item reveal-scale"><img src="https://images.pexels.com/photos/3845553/pexels-photo-3845553.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Eye examination room"></div>
+                    <div class="gallery-item reveal-scale"><img src="https://images.pexels.com/photos/4499151/pexels-photo-4499151.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Modern clinic interior"></div>
+                    <div class="gallery-item reveal-scale"><img src="https://images.pexels.com/photos/4225951/pexels-photo-4225951.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Doctor with equipment"></div>
+                    <div class="gallery-item reveal-scale"><img src="https://images.pexels.com/photos/3952224/pexels-photo-3952224.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Comfortable waiting area"></div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <h2 class="section-title reveal-up">🧠 Myth vs Fact — Eye Care Edition</h2>
+                <div class="myth-grid">
+                    <div class="slide-card tilt-card reveal-left">
+                        <div class="slide-front"><i class="fas fa-times-circle"></i><h3>Myth</h3><p>Wearing glasses weakens eyes</p></div>
+                        <div class="slide-back"><i class="fas fa-check-circle"></i><h3>Fact</h3><p>Glasses help correct vision</p></div>
+                    </div>
+                    <div class="slide-card tilt-card reveal-up">
+                        <div class="slide-front"><i class="fas fa-times-circle"></i><h3>Myth</h3><p>Sitting too close to TV ruins eyes</p></div>
+                        <div class="slide-back"><i class="fas fa-check-circle"></i><h3>Fact</h3><p>May cause strain but no permanent damage</p></div>
+                    </div>
+                    <div class="slide-card tilt-card reveal-right">
+                        <div class="slide-front"><i class="fas fa-times-circle"></i><h3>Myth</h3><p>Only old people need eye exams</p></div>
+                        <div class="slide-back"><i class="fas fa-check-circle"></i><h3>Fact</h3><p>Annual exams catch problems at any age</p></div>
+                    </div>
+                </div>
+                <p class="myth-instruction reveal-up">👆 Hover over each card to reveal the fact</p>
+            </div>
+        </section>
+
+        <section style="background: var(--section-bg-alt);">
+            <div class="container">
+                <h2 class="section-title reveal-up">✨ Life Before vs After ✨</h2>
+                <div class="comparison">
+                    <div class="before-box reveal-left">
+                        <i class="fas fa-frown" style="font-size: 2.5rem; color: #6F7E79;"></i>
+                        <h3>😓 BEFORE</h3>
+                        <ul>
+                            <li>🔹 Blurry vision</li>
+                            <li>🔹 Eye strain daily</li>
+                            <li>🔹 Frequent headaches</li>
+                        </ul>
+                    </div>
+                    <div class="after-box reveal-right">
+                        <i class="fas fa-smile-beam" style="font-size: 2.5rem; color: var(--accent);"></i>
+                        <h3>😊 AFTER</h3>
+                        <ul>
+                            <li>✅ Clear vision</li>
+                            <li>✅ Comfortable eyes</li>
+                            <li>✅ Better daily life</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section style="background: #1F2933; color: #ffffff;">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item reveal-scale"><h3 class="counter" data-target="5000">0</h3><p>Happy Patients</p></div>
+                    <div class="stat-item reveal-scale"><h3 class="counter" data-target="10">0</h3><p>Years Experience</p></div>
+                    <div class="stat-item reveal-scale"><h3>4.8 ★</h3><p>Google Rating</p></div>
+                </div>
+            </div>
+        </section>
+
+                <!-- Reviews Ticker -->
+        <section>
+            <div class="container">
+                <h2 class="section-title reveal-up">❤️ What Our Patients Say</h2>
+                <div class="reviews-ticker reveal-up">
+                    <div class="ticker-track" id="tickerTrack">
+                        <span class="review-item">⭐ 4.8 – "Very friendly doctor, explained everything clearly!" – Priya</span>
+                        <span class="review-item">⭐ 4.9 – "Modern clinic, relaxing atmosphere, best eye care!" – Michael</span>
+                        <span class="review-item">⭐ 5.0 – "Dr. Emily is so gentle. Highly recommend!" – Elena</span>
+                        <span class="review-item">⭐ 4.7 – "Lifetime clarity, thank you Drishti eye care!" – Rajesh</span>
+                        <span class="review-item">⭐ 5.0 – "Painless and thorough exam. Great team!" – Sarah</span>
+                        <span class="review-item">⭐ 4.6 – "Ambience is so soothing, felt like a spa." – Ananya</span>
+                        <span class="review-item">⭐ 4.9 – "Staff was incredibly polite and caring." – Vikram</span>
+                        <span class="review-item">⭐ 4.8 – "Got my new glasses in just 2 days! Super fast." – Neha</span>
+                        <span class="review-item">⭐ 4.5 – "Hygiene level is top‑notch, very clean." – Ramesh</span>
+                        <span class="review-item">⭐ 4.9 – "Doctor answered all my questions patiently." – Kavita</span>
+                        <span class="review-item">⭐ 4.4 – "Good experience overall. Will visit again." – Suresh</span>
+                        <span class="review-item">⭐ 4.8 – "The eye test was so quick and accurate." – Deepika</span>
+                        <span class="review-item">⭐ 4.3 – "Felt comfortable throughout the checkup." – Manoj</span>
+                        <span class="review-item">⭐ 4.9 – "Loved the modern equipment they use." – Pooja</span>
+                        <span class="review-item">⭐ 4.7 – "Receptionist was very welcoming." – Akash</span>
+                        <span class="review-item">⭐ 4.6 – "Doctor explained my prescription in detail." – Sunita</span>
+                        <span class="review-item">⭐ 4.8 – "Excellent service, definitely recommended." – Arjun</span>
+                        <span class="review-item">⭐ 4.5 – "The clinic has a very positive vibe." – Meera</span>
+                        <span class="review-item">⭐ 4.2 – "Wait time was a bit long but worth it." – Rohit</span>
+                        <span class="review-item">⭐ 4.9 – "Best eye care I have ever received." – Anjali</span>
+                        <span class="review-item">⭐ 4.8 – "Everything was explained before the test." – Karan</span>
+                        <span class="review-item">⭐ 4.7 – "Very clean and well‑maintained clinic." – Sneha</span>
+                        <span class="review-item">⭐ 4.6 – "The staff made my child feel at ease." – Divya</span>
+                        <span class="review-item">⭐ 4.4 – "Affordable pricing, quality treatment." – Amit</span>
+                        <span class="review-item">⭐ 4.9 – "Dr. Emily is a true professional." – Rakhi</span>
+                        <span class="review-item">⭐ 4.3 – "Nice ambience, liked the soft music." – Vijay</span>
+                        <span class="review-item">⭐ 4.8 – "They sanitized everything in front of me." – Preeti</span>
+                        <span class="review-item">⭐ 5.0 – "Flawless consultation. Highly impressed." – Gaurav</span>
+                        <span class="review-item">⭐ 4.7 – "The doctor gave me lifestyle tips too." – Shweta</span>
+                        <span class="review-item">⭐ 4.5 – "Everything from booking to checkup was smooth." – Rajat</span>
+                        <span class="review-item">⭐ 4.6 – "My eye strain is finally gone. Thank you!" – Priyanka</span>
+                        <span class="review-item">⭐ 4.8 – "Clinic interiors are beautiful and modern." – Abhishek</span>
+                        <span class="review-item">⭐ 4.4 – "Good selection of frames." – Ritu</span>
+                        <span class="review-item">⭐ 4.9 – "Doctor took time to listen, no rush." – Alok</span>
+                        <span class="review-item">⭐ 5.0 – "I could read clearly after the test. Magic!" – Nisha</span>
+                        <span class="review-item">⭐ 4.8 – "Friendly atmosphere, felt like home." – Mohit</span>
+                        <span class="review-item">⭐ 4.3 – "Sometimes slightly crowded but staff handles well." – Jyoti</span>
+                        <span class="review-item">⭐ 4.7 – "The air conditioning was perfect, very comfortable." – Shubham</span>
+                        <span class="review-item">⭐ 4.6 – "High‑tech machines, impressive." – Kiran</span>
+                        <span class="review-item">⭐ 4.9 – "Easy to book appointment on WhatsApp." – Lalita</span>
+                        <span class="review-item">⭐ 4.2 – "Decent experience, could improve speed." – Rahul</span>
+                        <span class="review-item">⭐ 4.5 – "Loved how they handled my elderly father." – Pankaj</span>
+                        <span class="review-item">⭐ 4.8 – "Superb clarity after getting new glasses." – Sapna</span>
+                        <span class="review-item">⭐ 4.7 – "The eye exercise tips really helped." – Vivek</span>
+                        <span class="review-item">⭐ 4.4 – "Nice follow‑up call after a week." – Rekha</span>
+                        <span class="review-item">⭐ 4.9 – "The clinic uses eco‑friendly materials, nice touch." – Siddharth</span>
+                        <span class="review-item">⭐ 5.0 – "Best optometrist I've ever met." – Anuradha</span>
+                        <span class="review-item">⭐ 4.6 – "Cleanliness at its peak, very impressed." – Dinesh</span>
+                        <span class="review-item">⭐ 4.8 – "My headaches reduced after the visit." – Pallavi</span>
+                        <span class="review-item">⭐ 4.3 – "Parking can be an issue but clinic is great." – Mukesh</span>
+                        <span class="review-item">⭐ 4.7 – "Kids' play area is a thoughtful addition." – Shilpa</span>
+                        <span class="review-item">⭐ 4.5 – "Efficient service. Got my lenses in a day." – Harsh</span>
+                        <span class="review-item">⭐ 4.9 – "The doctor's calm demeanor is very reassuring." – Mitali</span>
+                        <span class="review-item">⭐ 4.8 – "From ambience to treatment, all excellent." – Tarun</span>
+                        <span class="review-item">⭐ 4.4 – "I was nervous but they made me comfortable." – Roshni</span>
+                        <span class="review-item">⭐ 4.6 – "Professional and punctual. What else needed?" – Sanjay</span>
+                        <span class="review-item">⭐ 4.9 – "They have the latest eye‑testing gadgets." – Geeta</span>
+                        <span class="review-item">⭐ 5.0 – "I can see clearly now, thanks to Dr. Emily!" – Jatin</span>
+                        <span class="review-item">⭐ 4.7 – "The staff remembered my name on second visit." – Bhavna</span>
+                        <span class="review-item">⭐ 4.5 – "Soft lighting in the waiting area is relaxing." – Chirag</span>
+                        <span class="review-item">⭐ 4.8 – "Absolutely no pain during any test." – Karishma</span>
+                        <span class="review-item">⭐ 4.3 – "Good, but please add more seating." – Hemant</span>
+                        <span class="review-item">⭐ 4.6 – "My dry eye problem is much better now." – Ayesha</span>
+                        <span class="review-item">⭐ 4.9 – "Highly recommend for kids." – Madhavi</span>
+                        <span class="review-item">⭐ 4.2 – "Affordable prices with great quality." – Yash</span>
+                        <span class="review-item">⭐ 4.8 – "The entire team is very supportive." – Nalini</span>
+                        <span class="review-item">⭐ 4.5 – "Clinic location is convenient." – Aditya</span>
+                        <span class="review-item">⭐ 4.7 – "Nice frame collection, got compliments." – Vaishali</span>
+                        <span class="review-item">⭐ 4.4 – "Everything was sterilized, felt very safe." – Lalit</span>
+                        <span class="review-item">⭐ 4.9 – "The doctor gave me a diet chart for eye health." – Jyotsna</span>
+                        <span class="review-item">⭐ 4.6 – "Positive energy the moment you walk in." – Rohan</span>
+                        <span class="review-item">⭐ 4.8 – "My experience was outstanding." – Deepak</span>
+                        <span class="review-item">⭐ 4.3 – "Waiting time could be less, but service excellent." – Pooja</span>
+                        <span class="review-item">⭐ 4.5 – "They explained my insurance coverage honestly." – Alka</span>
+                        <span class="review-item">⭐ 4.7 – "I've been coming here for 3 years. Always great." – Manju</span>
+                        <span class="review-item">⭐ 4.9 – "Advanced retina scanning, very detailed." – Rishi</span>
+                        <span class="review-item">⭐ 5.0 – "No need to go anywhere else. This is the best." – Sarika</span>
+                        <span class="review-item">⭐ 4.8 – "The staff is kind and the treatment is effective." – Bhuvan</span>
+                        <span class="review-item">⭐ 4.4 – "Loved the personalized attention." – Nidhi</span>
+                        <span class="review-item">⭐ 4.6 – "My son's first eye exam was painless. Thank you!" – Monica</span>
+                        <span class="review-item">⭐ 4.7 – "Hygiene and safety protocols exceeded expectations." – Dheeraj</span>
+                        <span class="review-item">⭐ 4.5 – "Very happy with the contact lens fitting." – Shruti</span>
+                        <span class="review-item">⭐ 4.9 – "They even have a cooling water dispenser. Nice." – Harish</span>
+                        <span class="review-item">⭐ 4.8 – "Best decision to switch to Drishti eye care." – Tanya</span>
+                        <span class="review-item">⭐ 4.2 – "Could use more staff during peak hours." – Mahesh</span>
+                        <span class="review-item">⭐ 4.6 – "Dr. Emily explained my cataract risk so calmly." – Sudha</span>
+                        <span class="review-item">⭐ 4.3 – "Pleasant experience, will bring my family." – Nikhil</span>
+                        <span class="review-item">⭐ 4.7 – "Everything is digital, even prescriptions." – Esha</span>
+                        <span class="review-item">⭐ 5.0 – "Professional, clean, and very welcoming." – Gaurav</span>
+                        <span class="review-item">⭐ 4.8 – "The music playlist is so relaxing." – Isha</span>
+                        <span class="review-item">⭐ 4.5 – "Reasonable rates for such high‑quality care." – Shekhar</span>
+                        <span class="review-item">⭐ 4.9 – "They gave me a free cleaning kit. Sweet gesture." – Parul</span>
+                        <span class="review-item">⭐ 4.4 – "Ambience is like a high‑end clinic." – Aakash</span>
+                        <span class="review-item">⭐ 4.6 – "Treatment for my eye allergy was very effective." – Mansi</span>
+                        <span class="review-item">⭐ 4.7 – "Even the washroom is spotless." – Pranav</span>
+                        <span class="review-item">⭐ 4.8 – "Quick bloodless tests, very modern." – Khushi</span>
+                        <span class="review-item">⭐ 4.3 – "Good, but a little expensive." – Saurabh</span>
+                        <span class="review-item">⭐ 4.5 – "The doctor speaks very softly and kindly." – Mala</span>
+                        <span class="review-item">⭐ 4.9 – "Best ambience in the city." – Yashika</span>
+                        <span class="review-item">⭐ 4.6 – "Got appointment same day. Happy." – Vipul</span>
+                        <span class="review-item">⭐ 4.8 – "Staff guided me about blue‑light glasses." – Ritika</span>
+                        <span class="review-item">⭐ 4.4 – "Decent, might come again." – Chandra</span>
+                        <span class="review-item">⭐ 4.7 – "A very reassuring environment for seniors." – Uma</span>
+                        <span class="review-item">⭐ 4.2 – "Average wait, but good doctor." – Jaya</span>
+                        <span class="review-item">⭐ 4.5 – "Liked the honesty about not needing costly glasses." – Anupam</span>
+                        <span class="review-item">⭐ 4.9 – "Exceptional care, truly world‑class." – Shantanu</span>
+                        <span class="review-item">⭐ 5.0 – "Seeing clearly and feeling great!" – Sunaina</span>
+                    </div>
+                </div>
+                <div class="google-review-link reveal-up">
+                    <a href="https://www.google.com/maps/search/Indore+Near+Market+road,+India" target="_blank" rel="noopener">⭐ Check Live Reviews on Google</a>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <h2 class="section-title reveal-up">📍 Find Us Here</h2>
+                <div class="map-container reveal-scale">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0191735738997!2d144.9631579153176!3d-37.81362797975155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577d9f3e2a9f5c8!2sFederation%20Square!5e0!3m2!1sen!2sau!4v1650000000000!5m2!1sen!2sau" width="100%" height="350" style="border:0; border-radius: 14px;" allowfullscreen="" loading="lazy" title="Clinic Location Map"></iframe>
+                </div>
+                <div class="map-link reveal-up"><a href="https://maps.google.com/?q=123+Serenity+Ave,+Wellness+District" target="_blank" rel="noopener"><i class="fas fa-directions"></i> View on Google Maps & Get Directions</a></div>
+            </div>
+        </section>
+
+        <section id="whatsapp-booking">
+            <div class="container">
+                <h2 class="section-title reveal-up">👁️ See Clearly Again Today</h2>
+                <div class="whatsapp-booking-card reveal-scale">
+                    <form id="whatsappBookingForm">
+                        <div class="form-group"><label>Full name *</label><input type="text" id="patientName" placeholder="e.g., Rajesh Sharma" required></div>
+                        <div class="form-group"><label>Mobile number *</label><input type="tel" id="patientMobile" placeholder="+91 98765 43210" required></div>
+                        <div class="form-group"><label>Preferred date *</label><input type="text" id="appointmentDate" placeholder="Select date" readonly required></div>
+                        <div class="form-group"><label>Reason for appointment *</label><select id="appointmentReason" required><option value="">-- Select reason --</option><option>Routine eye checkup</option><option>Blurry vision / glasses</option><option>Dry eye problem</option><option>Eye strain / headaches</option><option>Glaucoma screening</option></select></div>
+                        <div class="form-group"><label>Notes</label><textarea id="extraNotes" rows="2" placeholder="Any additional details..."></textarea></div>
+                        <button type="button" id="whatsappBookBtnFinal" class="btn-whatsapp-full"><i class="fab fa-whatsapp"></i> Book Appointment via WhatsApp</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <footer><p>&copy; 2025 Drishti Eye care — Gentle eye care for all ages</p></footer>
+    </div>
+
+    <a href="#" id="floatWhatsappLink" class="floating-wa" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="#whatsapp-booking" class="sticky-book" id="stickyBookBtn"><i class="fas fa-calendar-check"></i> Book Now</a>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+        (function() {
+            // Dark mode toggle
+            const toggleBtn = document.getElementById('themeToggleBtn');
+            const themeText = document.getElementById('themeText');
+            const updateToggleUI = () => {
+                const isDark = document.body.classList.contains('dark');
+                themeText.innerText = isDark ? 'Light Mode' : 'Dark Mode';
+                toggleBtn.innerHTML = (isDark ? '<i class="fas fa-sun"></i> ' : '<i class="fas fa-moon"></i> ') + themeText
+                    .outerHTML;
+                const newSpan = toggleBtn.querySelector('span');
+                if (newSpan) toggleBtn._spanRef = newSpan;
+            };
+            toggleBtn._spanRef = themeText;
+            toggleBtn.addEventListener('click', () => {
+                document.body.classList.toggle('dark');
+                updateToggleUI();
+            });
+            updateToggleUI();
+
+            // Flatpickr
+            const dateInput = document.getElementById('appointmentDate');
+            if (typeof flatpickr !== 'undefined' && dateInput) {
+                flatpickr(dateInput, {
+                    minDate: "today",
+                    dateFormat: "Y-m-d",
+                    altInput: true,
+                    altFormat: "F j, Y"
+                });
+            } else if (dateInput) {
+                dateInput.removeAttribute('readonly');
+                dateInput.placeholder = 'YYYY-MM-DD';
+            }
+
+            // Eye test blur
+            const chartDiv = document.querySelector('.eye-chart');
+            const blurBtn = document.getElementById('blurToggleBtn');
+            blurBtn?.addEventListener('click', () => {
+                chartDiv.classList.toggle('blur-effect');
+                blurBtn.textContent = chartDiv.classList.contains('blur-effect') ?
+                    "🔍 Remove Blur" : "🔍 Simulate Blur (Toggle)";
+            });
+            document.getElementById('startEyeTestBtn')?.addEventListener('click', () => {
+                alert(
+                    "📋 Cover one eye, read the smallest line you can. Repeat with the other eye. For an accurate diagnosis, book a full exam with us!"
+                );
+            });
+
+            // Scroll to booking
+            document.querySelectorAll('.btn-primary, .sticky-book').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    if (btn.getAttribute('href') === '#whatsapp-booking') {
+                        e.preventDefault();
+                        document.getElementById('whatsapp-booking').scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+
+            // WhatsApp booking
+            const whatsappBtn = document.getElementById('whatsappBookBtnFinal');
+            const clinicNumber = "7678213022";
+            const clinicName = "Drishti Eye care";
+            whatsappBtn?.addEventListener('click', () => {
+                const name = document.getElementById('patientName')?.value.trim();
+                const mobile = document.getElementById('patientMobile')?.value.trim();
+                const date = document.getElementById('appointmentDate')?.value;
+                const reason = document.getElementById('appointmentReason')?.value;
+                const notes = document.getElementById('extraNotes')?.value.trim();
+                if (!name || !mobile || !date || !reason) {
+                    alert("❌ Please fill all required fields.");
+                    return;
+                }
+                let msg = `Hi ${clinicName}, I am ${name}. My reason: ${reason}. My mobile: ${mobile}. Preferred date: ${date}.`;
+                if (notes) msg += ` Notes: ${notes}.`;
+                msg += ` Kindly review.`;
+                window.open(`https://wa.me/${clinicNumber}?text=${encodeURIComponent(msg)}`, '_blank');
+            });
+            document.getElementById('floatWhatsappLink')?.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.open(
+                    `https://wa.me/${clinicNumber}?text=${encodeURIComponent(`Hi ${clinicName}, I'm interested in eye care services. Kindly review.`)}`,
+                    '_blank');
+            });
+
+            // Reviews ticker
+            const track = document.getElementById('tickerTrack');
+            if (track) {
+                const items = Array.from(track.children);
+                items.forEach(item => track.appendChild(item.cloneNode(true)));
+            }
+
+            // Scroll Progress Bar
+            const scrollProgress = document.getElementById('scrollProgress');
+            window.addEventListener('scroll', () => {
+                const scrollTop = window.scrollY;
+                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+                if (scrollProgress) scrollProgress.style.width = progress + '%';
+            }, { passive: true });
+
+            // Back to Top
+            const backToTop = document.getElementById('backToTop');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 600) {
+                    backToTop?.classList.add('visible');
+                } else {
+                    backToTop?.classList.remove('visible');
+                }
+            }, { passive: true });
+            backToTop?.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // Intersection Observer for reveal animations
+            const revealEls = document.querySelectorAll(
+                '.reveal-up, .reveal-left, .reveal-right, .reveal-scale, .step-exp');
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) {
+                        e.target.classList.add('visible');
+                        if (e.target.classList.contains('step-exp')) {
+                            e.target.classList.add('appear');
+                        }
+                        revealObserver.unobserve(e.target);
+                    }
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+            revealEls.forEach(el => revealObserver.observe(el));
+
+            // Counter animation for stats
+            const counters = document.querySelectorAll('.counter');
+            const counterObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counter = entry.target;
+                        const target = parseInt(counter.dataset.target);
+                        const duration = 2000;
+                        const step = target / (duration / 16);
+                        let current = 0;
+
+                        function updateCounter() {
+                            current += step;
+                            if (current < target) {
+                                counter.textContent = Math.floor(current) + '+';
+                                requestAnimationFrame(updateCounter);
+                            } else {
+                                counter.textContent = target + '+';
+                            }
+                        }
+                        updateCounter();
+                        counterObserver.unobserve(counter);
+                    }
+                });
+            }, { threshold: 0.5 });
+            counters.forEach(c => counterObserver.observe(c));
+
+            // 3D Tilt effect - only on non-touch devices
+            const supportsHover = window.matchMedia('(hover: hover)').matches;
+            if (supportsHover) {
+                const tiltCards = document.querySelectorAll('.tilt-card');
+                tiltCards.forEach(card => {
+                    card.addEventListener('mousemove', (e) => {
+                        const rect = card.getBoundingClientRect();
+                        const x = e.clientX - rect.left;
+                        const y = e.clientY - rect.top;
+                        const centerX = rect.width / 2;
+                        const centerY = rect.height / 2;
+                        const rotateX = ((y - centerY) / centerY) * -8;
+                        const rotateY = ((x - centerX) / centerX) * 8;
+                        card.style.transform =
+                            `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02,1.02,1.02)`;
+                    });
+                    card.addEventListener('mouseleave', () => {
+                        card.style.transform =
+                            'perspective(800px) rotateX(0deg) rotateY(0deg) scale3d(1,1,1)';
+                    });
+                });
+            }
+
+            // Parallax - also only for hover-capable devices (or apply with reduced performance)
+            const parallaxImages = document.querySelectorAll('.parallax-image');
+            let parallaxTicking = false;
+
+            function updateParallax() {
+                const scrollY = window.scrollY;
+                parallaxImages.forEach(el => {
+                    const strength = parseFloat(el.dataset.parallaxStrength) || 0.02;
+                    const rect = el.getBoundingClientRect();
+                    const elementTop = rect.top + scrollY;
+                    const elementHeight = rect.height;
+                    const windowHeight = window.innerHeight;
+                    if (rect.bottom < -100 || rect.top > windowHeight + 100) return;
+                    const relativePos = (scrollY + windowHeight / 2) - (elementTop + elementHeight / 2);
+                    const translateY = relativePos * strength * -1;
+                    el.style.transform = `translateY(${translateY}px)`;
+                });
+            }
+
+            if (supportsHover) {
+                window.addEventListener('scroll', () => {
+                    if (!parallaxTicking) {
+                        window.requestAnimationFrame(() => {
+                            updateParallax();
+                            parallaxTicking = false;
+                        });
+                        parallaxTicking = true;
+                    }
+                }, { passive: true });
+                window.addEventListener('resize', updateParallax);
+                setTimeout(updateParallax, 100);
+            } else {
+                // On touch devices, disable parallax for smoother scrolling
+                parallaxImages.forEach(el => el.style.transform = 'none');
+            }
+        })();
+    </script>
+</body>
+</html>
